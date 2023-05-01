@@ -66,57 +66,62 @@ export default function Home() {
     }))
   }
   return (
-    <main className='flex flex-col items-center pt-28 bg-[#FAFBFC]'>
-      <div className='w-fit'>
+    <main className='flex flex-col items-center pt-10 py-20  bg-[#FAFBFC] text-[#5F6D7E]'>
+      <div className='my-4'>
+        <img src="https://res.cloudinary.com/dzd53baqf/image/upload/v1682967635/Company_Logo_uszmj0.png" alt="Lookscout" />
+      </div>
+      <div className='w-fit border rounded-md'>
         <FormStageComponenet />
-        <form onSubmit={submitHandler} className='bg-white px-12 py-16'>
-          <InputComponent
-            id="name"
-            name="name"
-            type="text"
-            label="Name"
-            value={name}
-            onChange={handleChange}
-            placeholder="Enter Name"
-          />
-          <div>{nameError}</div>
-          <InputComponent
-            id="email"
-            name="email"
-            type="email"
-            label="Email"
-            value={email}
-            onChange={handleChange}
-            placeholder="Email Address"
-          />
-          <div>{emailError}</div>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+        <form onSubmit={submitHandler}>
+          <div  className='bg-white px-10 py-5'>
             <InputComponent
-              id="password"
-              name="password"
-              type="password"
-              label="Password"
-              value={password}
+              id="name"
+              name="name"
+              type="text"
+              label="Name"
+              value={name}
               onChange={handleChange}
-              placeholder="Password"
+              placeholder="Enter Name"
             />
+            <div>{nameError}</div>
             <InputComponent
-              id="confirmPassword"
-              name="confirmPassword"
-              type="password"
-              label="ConfirmPassword"
-              value={confirmPassword}
+              id="email"
+              name="email"
+              type="email"
+              label="Email"
+              value={email}
               onChange={handleChange}
-              placeholder="Confirm Password"
+              placeholder="Email Address"
             />
+            <div>{emailError}</div>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
+              <InputComponent
+                id="password"
+                name="password"
+                type="password"
+                label="Password"
+                value={password}
+                onChange={handleChange}
+                placeholder="Password"
+              />
+              <InputComponent
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                label="ConfirmPassword"
+                value={confirmPassword}
+                onChange={handleChange}
+                placeholder="Confirm Password"
+              />
+            </div>
+            <div>{passwordError}</div>
+            <div>
+              <input size={20} type="checkbox" name="terms" id="terms" onChange={e => setAcceptTerms(e.target.checked)} />
+              <label htmlFor="terms" className='ml-2'>I accept Terms and Privacy Policy</label>
+            </div>
           </div>
-          <div>{passwordError}</div>
-          <div>
-            <input type="checkbox" name="terms" id="terms" onChange={e => setAcceptTerms(e.target.checked)} />
-            <label htmlFor="terms">I accept Terms and Privacy Policy</label>
-          </div>
-          <div>
-            <button disabled={acceptTerms ? false : true} className={`flex justify-center items-center ml-auto rounded-md ${acceptTerms ? "bg-[#437EF7]" : "bg-gray-500"} text-white text-lg font-semibold px-3 py-2`}>Next <span className='ml-2'><FaGreaterThan size={15} /></span></button>
+          <div className='py-5 px-10 bg-[#FAFBFC]'>
+            <button disabled={acceptTerms ? false : true} className={`flex justify-center items-center ml-auto rounded-md ${acceptTerms ? "bg-[#437EF7]" : "bg-gray-500"} text-white text-lg font-semibold px-5 py-2`}>Next <span className='ml-2'><FaGreaterThan size={15} /></span></button>
           </div>
         </form>
       </div>

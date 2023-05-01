@@ -5,7 +5,7 @@ import { GoThumbsup } from 'react-icons/go'
 import FormIconLabelComponent from './FormIconLabelComponent'
 export default function FormStageComponenet() {
     return (
-        <div className='grid grid-cols-4 bg-[#FAFBFC] p-5'>
+        <div className='grid grid-cols-4 text-sm bg-[#FAFBFC] p-5'>
             <FormIconLabelComponent name={"Account"} icon={<BiLockAlt color={"#5F6D7E"}/>}/>
             <FormIconLabelComponent name={"Personal"} icon={<RxPerson color={"#5F6D7E"}/>}/>
             <FormIconLabelComponent name={"Billing"} icon={<BiDollar color={"#5F6D7E"}/>}/>
