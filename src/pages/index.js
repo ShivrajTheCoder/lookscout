@@ -1,12 +1,21 @@
 import { detectSystemTheme } from '@/Utils/detectSystemTheme';
 import InputComponent from '@/components/FormComponents/InputComponent';
 import FormStageComponenet from '@/components/FormHeaderComponents/FormStageComponenet';
-import { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import * as Yup from "yup"
+import { useContext, useEffect, useState } from 'react';
 import { FaGreaterThan } from "react-icons/fa"
+import { Store } from '@/themecontext/store';
 export default function Home() {
   const isDarkMode = detectSystemTheme();
+  const theme=useContext(Store);
+  console.log(theme);
+  useEffect(()=>{
+    if(!isDarkMode){
+      theme.dispatch("LIGHTMODE")
+    }
+    else{
+      theme.dispatch("DARKMODE")
+    }
+  },[isDarkMode])
   const [acceptTerms, setAcceptTerms] = useState(false);
   const [inputValues, setInputValues] = useState({
     name: "",

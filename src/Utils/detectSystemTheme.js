@@ -1,4 +1,4 @@
-export async function detectSystemTheme() {
+export function detectSystemTheme() {
   let isDarkMode = false;
 
   if (typeof window !== 'undefined') {
